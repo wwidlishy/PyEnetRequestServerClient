@@ -5,7 +5,7 @@ It provides easier client and server creation and also request structure.
 Check the example
 
 # Installation
-`pip install pyenet-sc==0.1`
+`pip install pyenet-sc==0.2`
 
 # Creating a server
 
@@ -36,7 +36,7 @@ def onRecv(event):
         print(f"From {address}: Request({request.requestId}, {request.requestData})")
 
 # Initialize our server
-server: Server = Server(24337, onConnect, onDisconnect, onRecv)
+server: Server = Server('localhost', 24337, onConnect, onDisconnect, onRecv)
 server.mainloop()
 ```
 
