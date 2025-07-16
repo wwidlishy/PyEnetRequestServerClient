@@ -5,7 +5,7 @@ It provides easier client and server creation and also request structure.
 Check the example
 
 # Installation
-`pip install pyenet-sc==0.2`
+`pip install pyenet-sc==0.3`
 
 # Creating a server
 
