@@ -42,12 +42,13 @@ class Client:
                 doEach(event)
 
 class Server:
-    def __init__(self, port, onConnect, onDisconnect, onRecv):
+    def __init__(self, ip, port, onConnect, onDisconnect, onRecv):
         self.host = None
         self.onConnect = onConnect
         self.onDisconnect = onDisconnect
         self.onRecv = onRecv
         self.port = port
+        self.ip = ip
     
     def send_data(self, event, data):
         event.peer.send(0, enet.Packet(data, enet.PACKET_FLAG_RELIABLE))
@@ -57,7 +58,7 @@ class Server:
         return None
     
     def mainloop(self):
-        self.host = enet.Host(enet.Address(b'localhost', self.port), 32, 2, 0, 0)
+        self.host = enet.Host(enet.Address(str(self.ip).encode('utf-8'), self.port), 32, 2, 0, 0)
 
         print(f"ENet server started on port {self.port}")
 
