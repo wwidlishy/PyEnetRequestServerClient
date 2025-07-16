@@ -16,5 +16,5 @@ def onRecv(event):
         request = Request.deserialize(raw)
         parse_request(server, event, address, request)
 
-server: Server = Server(24337, onConnect, onDisconnect, onRecv)
+server: Server = Server('localhost', 24337, onConnect, onDisconnect, onRecv)
 server.mainloop()
