@@ -4,6 +4,9 @@ This library is a simple wrapper around the enet library
 It provides easier client and server creation and also request structure.  
 Check the example
 
+# Installation
+`pip install pyenet-sc==0.1`
+
 # Creating a server
 
 ```py
